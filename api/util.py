@@ -15,6 +15,7 @@ COZ_TESTNET = ["http://test{}.cityofzion.io:8880".format(i) for i in [1,2,3,4,5]
 
 MAINNET_SEEDS = NEO_MAINNET + OTCGO_MAINNET + COZ_MAINNET
 TESTNET_SEEDS = NEO_TESTNET + OTCGO_TESTNET + COZ_TESTNET
+PRIVNET_SEEDS = ["127.0.0.1:2033{}".format(x) for x in [3,4,5,6]]
 
 
 GENERATION_AMOUNT = [8, 7, 6, 5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

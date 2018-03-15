@@ -4,7 +4,7 @@ import sys
 import os
 from rq import Queue
 from .db import db as blockchain_db
-from .util import MAINNET_SEEDS, TESTNET_SEEDS
+from .util import MAINNET_SEEDS, TESTNET_SEEDS, PRIVNET_SEEDS
 import time
 from .scripts import add_fees
 
@@ -28,7 +28,7 @@ def getBlockCount(nodeAPI=False):
     return rpcRequest("getblockcount", [], nodeAPI)
 
 def checkSeeds():
-    seed_list = MAINNET_SEEDS if net == "MainNet" else TESTNET_SEEDS
+    seed_list = MAINNET_SEEDS if net == "MainNet" elif net == "TestNet" TESTNET_SEEDS else PRIVNET_SEEDS
     seeds = []
     for test_rpc in seed_list:
         print(test_rpc)
