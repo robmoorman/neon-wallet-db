@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  mongodb:
+    image: aashreys/mongo-auth:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - AUTH=yes
+      - MONGODB_ADMIN_USER=admin
+      - MONGODB_ADMIN_PASS=admin
+      - MONGODB_APPLICATION_DATABASE=neonwallet
+      - MONGODB_APPLICATION_USER=neon
+      - MONGODB_APPLICATION_PASS=wallet
+  redis:
+    image: redis:3.2
+    ports:
+      - "6379:6379"

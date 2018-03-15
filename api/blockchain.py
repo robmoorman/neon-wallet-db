@@ -27,8 +27,15 @@ def getBlockCount(nodeAPI=False):
         nodeAPI = get_highest_node()
     return rpcRequest("getblockcount", [], nodeAPI)
 
+def getSeedsByNet():
+    if net == 'TestNet':
+        return TESTNET_SEEDS
+    elif net == 'PrivNet':
+        return PRIVNET_SEEDS
+    return MAINNET_SEEDS
+
 def checkSeeds():
-    seed_list = MAINNET_SEEDS if net == "MainNet" elif net == "TestNet" TESTNET_SEEDS else PRIVNET_SEEDS
+    seed_list = getSeedsByNet()
     seeds = []
     for test_rpc in seed_list:
         print(test_rpc)
